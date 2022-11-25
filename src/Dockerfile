@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1-buster AS prepare-restore-files
 ENV PATH="${PATH}:/root/.dotnet/tools"
-RUN dotnet tool install --global --no-cache dotnet-subset --version 0.3.0
+RUN dotnet tool install --global --no-cache dotnet-subset --version 0.3.1
 WORKDIR /src
 COPY . .
 RUN dotnet subset restore "API/CompanyName.MyMeetings.API/CompanyName.MyMeetings.API.csproj" --root-directory /src --output /src/restore_subset/
